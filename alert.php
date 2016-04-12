@@ -303,7 +303,7 @@
 
 				<div id="tabs4JS">
 
-<pre><code class="js">var modal = new Modal($('#mySidebarId'));
+<pre><code class="js">var modal = new Modal($('#myModalId'));
 modal.show();
 </code></pre>
 					<h4>Методы и свойства Modal</h4>
@@ -389,7 +389,7 @@ modal.show();
 					<div class="grid">
 						<div class="col-3 size-fix padding-1"><code>showNotification(message, duration = 2)</code></div>
 						<div class="col-3 size-fix padding-1">-</div>
-						<div class="col-6 size-fix padding-1">Показывает сообщение message и исчезает через duration-секунд. Параметр duration выражается в секундах, является необязателен, по умолчанию равен 2.</div>
+						<div class="col-6 size-fix padding-1">Показывает сообщение message и исчезает через duration-секунд. Параметр duration выражается в секундах, должен быть целым числов в промежутке от 1 до 30, является необязателен, по умолчанию равен 2.</div>
 					</div>
 				</div>
 			</div>
@@ -410,12 +410,12 @@ modal.show();
 				</div>
 
 				<div class="alert alert--color-blue">
-					<div class="alert__content">Всплывающие подсказки создаются без использования JavaScript, а только с помощью data-аттрибутами тегов</div>
+					<div class="alert__content">Всплывающие подсказки создаются без использования JavaScript, а только с помощью data-атрибутами тегов</div>
 				</div>
 
 				<div class="tabs tabs--transparent tabs--color-teal" id="tabs6">
 					<div class="tabs__item tabs__item--active" data-tab-target="tabs6Example">Примеры</div>
-					<div class="tabs__item" data-tab-target="tabs6Attrs">Аттрибуты</div>
+					<div class="tabs__item" data-tab-target="tabs6Attrs">Атрибуты</div>
 					<div class="tabs__item" data-tab-target="tabs6Template">Шаблон</div>
 				</div>			
 
@@ -425,7 +425,7 @@ modal.show();
 
 				<div id="tabs6Attrs">
 					<div class="grid">
-						<div class="col-5 size-fix padding-1 bold">Аттрибут</div>
+						<div class="col-5 size-fix padding-1 bold">Атрибут</div>
 						<div class="col-7 size-fix padding-1 bold">Описание</div>
 					</div>
 					<div class="grid">
