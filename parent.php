@@ -43,15 +43,14 @@
 	</div>	
 	<div class="sidebar__menu">
 		<a href="global.php"><div class="sidebar__menu__item <? if ($title=="Глобальные модификаторы")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-globe"></i>Глобальные модификаторы</div></a>
-		<a href="buttons.php"><div class="sidebar__menu__item <? if ($title=="Сетка")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-th"></i>Сетка</div></a>
+		<a href="grid.php"><div class="sidebar__menu__item <? if ($title=="Сетка")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-th"></i>Сетка</div></a>
 		<a href="buttons.php"><div class="sidebar__menu__item <? if ($title=="Кнопки")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-minus-square"></i>Кнопки</div></a>
 		<a href="forms.php"><div class="sidebar__menu__item <? if ($title=="Формы")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-th-list"></i>Формы</div></a>
 		<a href="alert.php"><div class="sidebar__menu__item <? if ($title=="Сообщения")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-clone"></i>Сообщения</div></a>
 		<a href="list.php"><div class="sidebar__menu__item <? if ($title=="Списки")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-bars"></i>Списки</div></a>
 		<a href="tabs.php"><div class="sidebar__menu__item <? if ($title=="Вкладки")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-ellipsis-h"></i>Вкладки</div></a>
 		<a href="cards.php"><div class="sidebar__menu__item <? if ($title=="Карточки") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-credit-card"></i>Карточки</div></a>
-		<a href="cards.php"><div class="sidebar__menu__item <? if ($title=="Бары") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-tasks"></i>Бары</div></a>
-		<a href="cards.php"><div class="sidebar__menu__item <? if ($title=="Javascript-компоненты") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-code"></i>JavaScript компоненты</div></a>
+		<a href="bars.php"><div class="sidebar__menu__item <? if ($title=="Бары") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-tasks"></i>Бары</div></a>
 	</div>
 </div>
 

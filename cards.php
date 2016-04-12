@@ -3,214 +3,228 @@
 	include('parent.php'); 
 ?>
 
+<script type="text/javascript">
+	$(function() {
+		var tab1 = new Tabs($('#tabs1'));
+		var tab2 = new Tabs($('#tabs2'));
+		var tab3 = new Tabs($('#tabs3'));
+	});
+</script>
 
 <div class="grid">
-	<div class="col-1"></div>
-	<div class="col-8">
-		<h1>Карточки</h1>
-		<h2>Основы</h2>
+	<div class="col-9">
+		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Карточки</div>
 		
-		<p>Карточки помогают визуально отделять информацию друг от друга. Родительский контейнер карточек - <code>.card</code>. О может состоять из четырех частей: <code>.card__header</code> - заголовок карточки, <code>.card__content</code> - содержимое карточки, <code>.card__image</code> - картинка, </code><code>.card__footer</code> - "подвал" карточки. </p>
-		
-		<p>Заголовок карточки также может содержать два элемента - <code>.card__header__title</code> (непосредственно сам заголовок) и <code>.card__header__icon</code> (иконка карточки)</p>
-
-		<p><code>.card__image</code> должен содержать в себе элемент <code>&lt;img&gt;</code>, а также может включать себя элемент - <code>.card__image__header</code>, состоящих из двух: <code>.card__image__header__title</code> и <code>.card__image__header__icon</code></p>
-
-		<p><code>.card__footer</code> может содержать элемент <code>.card__footer__meta</code></p>
-
-		<div class="grid">			
-			<div class="col-6">
-				<div class="card">
-					<div class="card__header">
-						<div class="card__header__title">Заголовок</div>
-					</div>
-					<div class="card__content">Содержимое</div>
-					<div class="card__footer">Подвал</div>
+		<a name="card"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">				
+				<h1 class="helvetica-thin">Стандартные карточки</h1>
+				<span class="label">Доступно с версии 2.0</span>
+				<div class="alert">
+					<div class="alert__content">Карточки - популярный способ подачи контента пользователю</div>
 				</div>
-			</div>
-			<div class="col-6">
-				<div class="card">
-					<div class="card__image">
-						<img src="http://zombdrive.com/images1600_/2010-chevrolet-camaro-8.jpg" alt="">
-						<div class="card__image__header">
-							<div class="card__image__header__title">Заголовок</div>
-							<div class="card__image__header__icon"><i class="fa fa-list"></i></div>
+				<div class="alert alert--color-green">
+					<div class="alert__content">Модификаторы вкладок можно использовать совместно друг с другом</div>
+				</div>
+				<div class="tabs tabs--transparent tabs--color-teal" id="tabs1">
+					<div class="tabs__item tabs__item--active" data-tab-target="tabs1Example">Примеры</div>
+					<div class="tabs__item" data-tab-target="tabs1Elements">Элементы</div>
+					<div class="tabs__item" data-tab-target="tabs1Mods">Модификаторы</div>
+					<div class="tabs__item" data-tab-target="tabs1Template">Шаблон</div>
+				</div>			
+
+				<div id="tabs1Example">
+					<div class="card">
+						<div class="card__header">
+							<div class="card__header__title">Tesla Model S</div>
 						</div>
+						<div class="card__content">
+							<p>Tesla Model S — пятидверный электромобиль производства американской компании Tesla Motors. Прототип был впервые показан на Франкфуртском автосалоне в 2009 году; поставки автомобиля в США начались в июне 2012 года.</p>
+						</div>
+						<div class="card__footer">
+							<button class="button--color-green">Купить</button>
+						</div>						
 					</div>
-					<div class="card__content">Содержимое</div>
-					<div class="card__footer">Подвал</div>
+				</div>
+
+				<div id="tabs1Elements">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название элемента</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__header</code></div>
+						<div class="col-7 size-fix padding-1">Блок заголовка карточки</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__header__title</code></div>
+						<div class="col-7 size-fix padding-1">Заголовок карточки</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__header__icon</code></div>
+						<div class="col-7 size-fix padding-1">Иконка в заголовке карточки</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__content</code></div>
+						<div class="col-7 size-fix padding-1">Содержимое карточки</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__footer</code></div>
+						<div class="col-7 size-fix padding-1">Подвал карточки</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__footer__meta</code></div>
+						<div class="col-7 size-fix padding-1">Мета-информация в подвале карточки</div>
+					</div>
+				</div>
+
+				<div id="tabs1Mods">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название модификатора</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card--color-*</code></div>
+						<div class="col-7 size-fix padding-1">Изменяет цвет фона и текста карточки. Вместо * нужно указать значение цвета. Для элементов вкладок доступны все цвета только из основной палитры и цвет black из дополнительной. <a class="teal-fg" href="global.php#colors">Палитра цветов Altrone</a></div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card--no-shadow</code></div>
+						<div class="col-7 size-fix padding-1">Убирает тень</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card--no-smooth</code></div>
+						<div class="col-7 size-fix padding-1">Убирает сглаживание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card--rounded</code></div>
+						<div class="col-7 size-fix padding-1">Увеличивает сглаживание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__content--no-padding</code></div>
+						<div class="col-7 size-fix padding-1">Убирает внутренние отступы у контента карточки (аналог глобального модификатора .padding-0)</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__content--list</code></div>
+						<div class="col-7 size-fix padding-1">Исправляет неправильную стилилизацию списков, которые находятся в карточке</div>
+					</div>
+				</div>
+
+				<div id="tabs1Template">
+					<div class="grid">
+<pre><code class="html">&lt;div class=&quot;card&quot;&gt;
+	&lt;div class=&quot;card__header&quot;&gt;
+		&lt;div class=&quot;card__header__title&quot;&gt;Tesla Model S&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card__content&quot;&gt;
+		&lt;p&gt;Tesla Model S &mdash; &#x43f;&#x44f;&#x442;&#x438;&#x434;&#x432;&#x435;&#x440;&#x43d;&#x44b;&#x439; &#x44d;&#x43b;&#x435;&#x43a;&#x442;&#x440;&#x43e;&#x43c;&#x43e;&#x431;&#x438;&#x43b;&#x44c; &#x43f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#x441;&#x442;&#x432;&#x430; &#x430;&#x43c;&#x435;&#x440;&#x438;&#x43a;&#x430;&#x43d;&#x441;&#x43a;&#x43e;&#x439; &#x43a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438; Tesla Motors. 
+		&#x41f;&#x440;&#x43e;&#x442;&#x43e;&#x442;&#x438;&#x43f; &#x431;&#x44b;&#x43b; &#x432;&#x43f;&#x435;&#x440;&#x432;&#x44b;&#x435; &#x43f;&#x43e;&#x43a;&#x430;&#x437;&#x430;&#x43d; &#x43d;&#x430; &#x424;&#x440;&#x430;&#x43d;&#x43a;&#x444;&#x443;&#x440;&#x442;&#x441;&#x43a;&#x43e;&#x43c; &#x430;&#x432;&#x442;&#x43e;&#x441;&#x430;&#x43b;&#x43e;&#x43d;&#x435; &#x432; 2009 &#x433;
+		&#x43e;&#x434;&#x443;; &#x43f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438; &#x430;&#x432;&#x442;&#x43e;&#x43c;&#x43e;&#x431;&#x438;&#x43b;&#x44f; &#x432; &#x421;&#x428;&#x410; &#x43d;&#x430;&#x447;&#x430;&#x43b;&#x438;&#x441;&#x44c; &#x432; &#x438;&#x44e;&#x43d;&#x435; 2012 &#x433;&#x43e;&#x434;&#x430;.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card__footer&quot;&gt;
+		&lt;button class=&quot;button--color-green&quot;&gt;&#x41a;&#x443;&#x43f;&#x438;&#x442;&#x44c;&lt;/button&gt;
+	&lt;/div&gt;						
+&lt;/div&gt;</code></pre>
+					</div>
 				</div>
 			</div>
-			<div class="col-6"><code>
-				&lt;div class=&quot;card&quot;&gt;<br>
-					&lt;div class=&quot;card__header&quot;&gt;<br>
-						&lt;div class=&quot;card__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&lt;/div&gt;<br>
-					&lt;/div&gt;<br>
-					&lt;div class=&quot;card__content&quot;&gt;&#x421;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43c;&#x43e;&#x435;&lt;/div&gt;<br>
-					&lt;div class=&quot;card__footer&quot;&gt;&#x41f;&#x43e;&#x434;&#x432;&#x430;&#x43b;&lt;/div&gt;<br>
-				&lt;/div&gt;
-			</code></div>
-			<div class="col-6"><code>
-				&lt;div class=&quot;card&quot;&gt;<br>
-					&lt;div class=&quot;card__image&quot;&gt;<br>
-						&lt;img src=&quot;http://zombdrive.com/images1600_/2010-chevrolet-camaro-8.jpg&quot; alt=&quot;&quot;&gt;<br>
-						&lt;div class=&quot;card__image__header&quot;&gt;<br>
-							&lt;div class=&quot;card__image__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&lt;/div&gt;<br>
-							&lt;div class=&quot;card__image__header__icon&quot;&gt;&lt;i class=&quot;fa fa-list&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br>
-						&lt;/div&gt;<br>
-					&lt;/div&gt;<br>
-					&lt;div class=&quot;card__content&quot;&gt;&#x421;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43c;&#x43e;&#x435;&lt;/div&gt;<br>
-					&lt;div class=&quot;card__footer&quot;&gt;&#x41f;&#x43e;&#x434;&#x432;&#x430;&#x43b;&lt;/div&gt;<br>
-				&lt;/div&gt;
-			</code></div>
 		</div>
 
-		<h2>Модификации карточек</h2>
-		<div class="grid">
-			<div class="col-4 margin-vertical-3">
-				<div class="card card--color-blue">
-					<div class="card__header">
-						<div class="card__header__title">Заголовок</div>
-					</div>
-					<div class="card__content">Содержимое</div>
-					<div class="card__footer">Подвал</div>
+		<a name="images"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">				
+				<h1 class="helvetica-thin">Карточки с изображениями</h1>
+				<span class="label">Доступно с версии 2.0</span>
+				<div class="alert">
+					<div class="alert__content">Чтобы создавать эффектные карточки, вы можете добавлять на них изображения</div>
 				</div>
-			</div>
-			<div class="col-8 margin-vertical-3">
-				<b>Цвет карточек</b>
-				<code><b>.card--color-*</b></code>
-				<br><i>Доступно с версии <b>2.0</b></i>
-				<p>Вместо * нужно написать один из следующих вариантов: <code>red, orange, yellow, olive, green, teal, blue, purple, violet, pink, brown, black</code></p>
-				<code>
-					&lt;div class=&quot;card card--color-blue&quot;&gt;<br>
-						&lt;div class=&quot;card__header&quot;&gt;<br>
-							&lt;div class=&quot;card__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&lt;/div&gt;<br>
-						&lt;/div&gt;<br>
-						&lt;div class=&quot;card__content&quot;&gt;&#x421;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43c;&#x43e;&#x435;&lt;/div&gt;<br>
-						&lt;div class=&quot;card__footer&quot;&gt;&#x41f;&#x43e;&#x434;&#x432;&#x430;&#x43b;&lt;/div&gt;<br>
-					&lt;/div&gt;
-				</code><br>					
-			</div>
 
-			<hr>
-
-			<div class="col-4 margin-vertical-3">
-				<div class="card">
-					<div class="card__header">
-						<div class="card__header__title">Заголовок</div>
-					</div>
-					<div class="card__content card__content--no-padding">Содержимое</div>
-					<div class="card__footer">Подвал</div>
+				<div class="alert alert--color-blue">
+					<div class="alert__content">Карточка с изображениями поддерживает все элементы обычной карточки, кроме .card__header и его дочерних элементов.</div>
 				</div>
-			</div>
-			<div class="col-8 margin-vertical-3">
-				<b>Содержимое без отступов</b>
-				<code><b>.card__content--no-padding</b></code>
-				<br><i>Доступно с версии <b>2.0</b></i>
-				<p>Убирает отступы у содержимого карточки</p>
-				<code>
-					&lt;div class=&quot;card&quot;&gt;<br>
-						&lt;div class=&quot;card__header&quot;&gt;<br>
-							&lt;div class=&quot;card__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&lt;/div&gt;<br>
-						&lt;/div&gt;<br>
-						&lt;div class=&quot;card__content card__content--no-padding&quot;&gt;&#x421;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43c;&#x43e;&#x435;&lt;/div&gt;<br>
-						&lt;div class=&quot;card__footer&quot;&gt;&#x41f;&#x43e;&#x434;&#x432;&#x430;&#x43b;&lt;/div&gt;<br>
-					&lt;/div&gt;
-				</code><br>					
-			</div>
 
-			<hr>
+				<div class="alert alert--color-blue">
+					<div class="alert__content">Карточка с изображениями поддерживает все модификаторы обычной карточки.</div>
+				</div>
+				
+				<div class="tabs tabs--transparent tabs--color-teal" id="tabs2">
+					<div class="tabs__item tabs__item--active" data-tab-target="tabs2Example">Примеры</div>
+					<div class="tabs__item" data-tab-target="tabs2Elements">Элементы</div>
+					<div class="tabs__item" data-tab-target="tabs2Template">Шаблон</div>
+				</div>			
 
-			<div class="col-4 margin-vertical-3">
-				<div class="card">
-					<div class="card__content card__content--no-padding card__content--list">
-						<div class="list list--animation-invert list--color-green">
-							<div class="list__item">Item 1</div>
-							<div class="list__item">Item 2</div>
-							<div class="list__item">Item 3</div>
+				<div id="tabs2Example">
+					<div class="card">
+						<div class="card__image">
+							<img src="http://carrrsmag.com/data_images/models/tesla-model-s/tesla-model-s-05.jpg" alt="Tesla Model S">
+							<div class="card__image__header">
+								<div class="card__image__header__title">Tesla Model S</div>
+							</div>
 						</div>
+						<div class="card__content">
+							<p>Tesla Model S — пятидверный электромобиль производства американской компании Tesla Motors. Прототип был впервые показан на Франкфуртском автосалоне в 2009 году; поставки автомобиля в США начались в июне 2012 года.</p>
+						</div>
+						<div class="card__footer">
+							<button class="button--color-green">Купить</button>
+						</div>						
 					</div>
 				</div>
-			</div>
-			<div class="col-8 margin-vertical-3">
-				<b>Закругление списков</b>
-				<code><b>.card__content--list</b></code>
-				<br><i>Доступно с версии <b>2.0</b></i>
-				<p>Если карточка используется только для отображения списка <code>.list</code>, то нужно использовать этот модификатор</p>
-				<code>
-					&lt;div class=&quot;card&quot;&gt;<br>
-						&lt;div class=&quot;card__content card__content--no-padding card__content--list&quot;&gt;<br>
-							&lt;div class=&quot;list list--animation-invert list--color-green&quot;&gt;<br>
-								&lt;div class=&quot;list__item&quot;&gt;Item 1&lt;/div&gt;<br>
-								&lt;div class=&quot;list__item&quot;&gt;Item 2&lt;/div&gt;<br>
-								&lt;div class=&quot;list__item&quot;&gt;Item 3&lt;/div&gt;<br>
-							&lt;/div&gt;<br>
-						&lt;/div&gt;<br>
-					&lt;/div&gt;
-				</code><br>					
-			</div>
 
-
-			<hr>
-
-			<div class="col-4 margin-vertical-3">
-				<div class="card card--rounded card--color-black">
-					<div class="card__header">
-						<div class="card__header__title">Заголовок</div>
+				<div id="tabs2Elements">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название элемента</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
 					</div>
-					<div class="card__content">Содержимое</div>
-					<div class="card__footer">Подвал</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__image</code></div>
+						<div class="col-7 size-fix padding-1">Блок изображения</div>
+					</div>	
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__image__header</code></div>
+						<div class="col-7 size-fix padding-1">Блок заголовка изображения</div>
+					</div>	
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__image__header__title</code></div>
+						<div class="col-7 size-fix padding-1">Заголовок карточки</div>
+					</div>	
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.card__image__header__icon</code></div>
+						<div class="col-7 size-fix padding-1">Иконка карточки</div>
+					</div>				
 				</div>
-			</div>
-			<div class="col-8 margin-vertical-3">
-				<b>Закругление карточек</b>
-				<code><b>.card--no-smooth, .card--smooth, .card--rounded</b></code>
-				<br><i>Доступно с версии <b>2.0</b></i>
-				<p>Задает степень закругления углов карточки. <code>.card--smooth</code> - стандартное закругление углов.</p>
-				<code>
-					&lt;div class=&quot;card card--rounded card--color-black&quot;&gt;<br>
-						&lt;div class=&quot;card__header&quot;&gt;<br>
-							&lt;div class=&quot;card__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&lt;/div&gt;<br>
-						&lt;/div&gt;<br>
-						&lt;div class=&quot;card__content&quot;&gt;&#x421;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43c;&#x43e;&#x435;&lt;/div&gt;<br>
-						&lt;div class=&quot;card__footer&quot;&gt;&#x41f;&#x43e;&#x434;&#x432;&#x430;&#x43b;&lt;/div&gt;<br>
-					&lt;/div&gt;
-				</code><br>					
-			</div>
 
-			<hr>
-
-			<div class="col-4 margin-vertical-3">
-				<div class="card card--color-violet card--no-shadow">
-					<div class="card__header">
-						<div class="card__header__title">Заголовок</div>
+				<div id="tabs2Template">
+					<div class="grid">
+<pre><code class="html">&lt;div class=&quot;card&quot;&gt;
+	&lt;div class=&quot;card__image&quot;&gt;
+		&lt;img src=&quot;http://carrrsmag.com/data_images/models/tesla-model-s/tesla-model-s-05.jpg&quot; alt=&quot;Tesla Model S&quot;&gt;
+		&lt;div class=&quot;card__image__header&quot;&gt;
+			&lt;div class=&quot;card__image__header__title&quot;&gt;Tesla Model S&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card__content&quot;&gt;
+		&lt;p&gt;Tesla Model S &mdash; &#x43f;&#x44f;&#x442;&#x438;&#x434;&#x432;&#x435;&#x440;&#x43d;&#x44b;&#x439; &#x44d;&#x43b;&#x435;&#x43a;&#x442;&#x440;&#x43e;&#x43c;&#x43e;&#x431;&#x438;&#x43b;&#x44c; &#x43f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#x441;&#x442;&#x432;&#x430; &#x430;&#x43c;&#x435;&#x440;&#x438;&#x43a;&#x430;&#x43d;&#x441;&#x43a;&#x43e;&#x439; &#x43a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438; Tesla Motors. 
+		&#x41f;&#x440;&#x43e;&#x442;&#x43e;&#x442;&#x438;&#x43f; &#x431;&#x44b;&#x43b; &#x432;&#x43f;&#x435;&#x440;&#x432;&#x44b;&#x435; &#x43f;&#x43e;&#x43a;&#x430;&#x437;&#x430;&#x43d; &#x43d;&#x430; &#x424;&#x440;&#x430;&#x43d;&#x43a;&#x444;&#x443;&#x440;&#x442;&#x441;&#x43a;&#x43e;&#x43c; &#x430;&#x432;&#x442;&#x43e;&#x441;&#x430;&#x43b;&#x43e;&#x43d;&#x435; &#x432; 2009 &#x433;&#x43e;&#x434;&#x443;; 
+		&#x43f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438; &#x430;&#x432;&#x442;&#x43e;&#x43c;&#x43e;&#x431;&#x438;&#x43b;&#x44f; &#x432; &#x421;&#x428;&#x410; &#x43d;&#x430;&#x447;&#x430;&#x43b;&#x438;&#x441;&#x44c; &#x432; &#x438;&#x44e;&#x43d;&#x435; 2012 &#x433;&#x43e;&#x434;&#x430;.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card__footer&quot;&gt;
+		&lt;button class=&quot;button--color-green&quot;&gt;&#x41a;&#x443;&#x43f;&#x438;&#x442;&#x44c;&lt;/button&gt;
+	&lt;/div&gt;						
+&lt;/div&gt;</code></pre>
 					</div>
-					<div class="card__content">Содержимое</div>
-					<div class="card__footer">Подвал</div>
 				</div>
-			</div>
-			<div class="col-8 margin-vertical-3">
-				<b>Без тени</b>
-				<code><b>.card--no-shadow</b></code>
-				<br><i>Доступно с версии <b>2.0</b></i>
-				<p>Убирает тень у карточки</p>
-				<code>
-					&lt;div class=&quot;card card--color-violet card--no-shadow&quot;&gt;<br>
-						&lt;div class=&quot;card__header&quot;&gt;<br>
-							&lt;div class=&quot;card__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&lt;/div&gt;<br>
-						&lt;/div&gt;<br>
-						&lt;div class=&quot;card__content&quot;&gt;&#x421;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43c;&#x43e;&#x435;&lt;/div&gt;<br>
-						&lt;div class=&quot;card__footer&quot;&gt;&#x41f;&#x43e;&#x434;&#x432;&#x430;&#x43b;&lt;/div&gt;<br>
-					&lt;/div&gt;
-				</code><br>					
 			</div>
 		</div>
 	</div>
-	<div class="col-3">
-		<ul class="list list--animation-underline">
-			<li>Основы</li>
-			<li>Модификации карточек</li>
-			<li>История обновлений модуля</li>
-		</ul>
+
+	<div class="col-3" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#card"><div class="list__item">Стандартные Карточки</div>
+					<a href="#images"><div class="list__item">Карточки с изображениями</div></a>
+				</div>				
+			</div>
+		</div>
 	</div>
 </div>

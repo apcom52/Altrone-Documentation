@@ -29,7 +29,7 @@
 					<div class="alert__content">Вкладки помогают удобно разделить контент на странице</div>
 				</div>
 				<div class="alert alert--color-blue">
-					<div class="alert__content">Можно автоматически назначить переключение вкладок</div>
+					<div class="alert__content">Можно автоматически назначить переключение вкладок с помощью JavaScript</div>
 				</div>
 				<div class="alert alert--color-green">
 					<div class="alert__content">Модификаторы вкладок можно использовать совместно друг с другом</div>
