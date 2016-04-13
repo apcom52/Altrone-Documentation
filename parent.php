@@ -36,11 +36,11 @@
 </div>
 
 <div class="sidebar sidebar--under-taskbar sidebar--invert sidebar--color-teal" id="sidebar">
-	<div class="sidebar__cover">
+	<a href="index.php"><div class="sidebar__cover">
 		<img src="http://vignette2.wikia.nocookie.net/marveldatabase/images/0/05/Ultron-icon.png/revision/latest?cb=20150423093134" alt="Altrone" width="64" height="auto">
 		<div class="sidebar__cover__title">Altrone CSS</div>
 		<button class="button--size-small button--color-green button--icon"><i class="fa fa-download"></i>Загрузить</button>
-	</div>	
+	</div>	</a>
 	<div class="sidebar__menu">
 		<a href="global.php"><div class="sidebar__menu__item <? if ($title=="Глобальные модификаторы")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-globe"></i>Глобальные модификаторы</div></a>
 		<a href="grid.php"><div class="sidebar__menu__item <? if ($title=="Сетка")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-th"></i>Сетка</div></a>
