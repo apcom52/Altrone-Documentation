@@ -21,7 +21,7 @@
 	<div class="col-9">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Формы</div>
 		
-		<a name="card"></a>
+		<a name="forms"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Формы</h1>
@@ -91,6 +91,10 @@
 						<div class="col-5 size-fix padding-1"><code>.form--no-padding</code></div>
 						<div class="col-7 size-fix padding-1">Убирает внутренние отступы по горизонтали (аналог глобального модификатора .padding-horizontal-0)</div>
 					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.invalid</code></div>
+						<div class="col-7 size-fix padding-1">Устанавливает стили для полей с неправильными введенными данными</div>
+					</div>
 				</div>
 
 				<div id="tabs1Template">
@@ -106,7 +110,7 @@
 			</div>
 		</div>
 
-		<a name="images"></a>
+		<a name="fields"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Комбинированные поля</h1>
@@ -178,7 +182,7 @@
 			</div>
 		</div>
 
-		<a name="images"></a>
+		<a name="checkbox"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Флажки</h1>
@@ -287,7 +291,7 @@
 			</div>
 		</div>
 
-		<a name="images"></a>
+		<a name="radio"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Радио-кнопки</h1>
@@ -396,7 +400,7 @@
 			</div>
 		</div>
 
-		<a name="images"></a>
+		<a name="toggle"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Переключатели</h1>
@@ -482,7 +486,7 @@
 		</div>
 
 
-		<a name="images"></a>
+		<a name="dropdown"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Выпадающее меню</h1>
@@ -567,7 +571,7 @@
 		</div>
 
 
-		<a name="images"></a>
+		<a name="select"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Выпадающий список</h1>
@@ -715,13 +719,13 @@
 			<div class="card__content">
 				<h3>Разделы</h3>
 				<div class="list list--color-teal">
-					<a href="#card"><div class="list__item">Формы</div>
-					<a href="#images"><div class="list__item">Комбинированные поля</div></a>
-					<a href="#images"><div class="list__item">Флажки</div></a>
-					<a href="#images"><div class="list__item">Радио-кнопки</div></a>
-					<a href="#images"><div class="list__item">Переключатели</div></a>
-					<a href="#images"><div class="list__item">Выпадающее меню</div></a>
-					<a href="#images"><div class="list__item">Выпадающий список</div></a>
+					<a href="#forms"><div class="list__item">Формы</div>
+					<a href="#fields"><div class="list__item">Комбинированные поля</div></a>
+					<a href="#checkbox"><div class="list__item">Флажки</div></a>
+					<a href="#radio"><div class="list__item">Радио-кнопки</div></a>
+					<a href="#toggle"><div class="list__item">Переключатели</div></a>
+					<a href="#dropdown"><div class="list__item">Выпадающее меню</div></a>
+					<a href="#select"><div class="list__item">Выпадающий список</div></a>
 				</div>				
 			</div>
 		</div>

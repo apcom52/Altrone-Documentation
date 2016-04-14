@@ -33,37 +33,6 @@ $(function() {
 		e.stopPropagation();
 	});
 
-
-	/* Select Меню */
-	/*$('body').on('click', '.select__menu', function(event) {
-		var parent = $(this).parent();
-		var select = $(this);
-		var options = parent.find('.select__options');
-		var selected_id = $(this).data('selectValue');
-		options.find('.select__options__item').removeClass('select__options__item--active');
-		var active_option = options.find('.select__options__item[data-option-id="' + selected_id + '"]');
-		active_option.addClass('select__options__item--active');
-		select.toggleClass('select__menu--open');
-		options.css('width', select.outerWidth());
-		options.css('top', $(this).offset().top + select.outerHeight());
-		options.css('left', $(this).offset().left);
-		options.slideToggle(300);
-
-		/* !!! ToDo: сделать позиционирование по вертикали и горизонтали */
-
-		/*$('body').on('click', '.select__options__item', function(e) {
-			var current = $(this);
-			var parentSelect = $(this).parent().parent().find('.select__menu');
-			var currentValue = current.data('optionId');
-			options.find('.select__options__item').removeClass('select__options__item--active');
-			$(this).addClass('select__options__item--active');
-			parentSelect.html(current.html());
-			parentSelect.data('selectValue', currentValue);
-			parentSelect.removeClass('select__menu--open');
-			options.slideUp(300);
-		});
-	});*/
-
 	/* Всплывающие подсказки */
 	var lastTooltipPosition = {x: null, y: null};	
 	$('[data-tooltip]').on({
@@ -323,23 +292,22 @@ Select = function(element, options, index) {
 	this.el = element;
 	this.options = options;
 	this.el.append("<div class='select__menu'></div>");
-	this.menu = element.find('.select__menu');
+	this.menu = this.el.find('.select__menu');
+	console.log(this.menu);
+	this.menu.html("Hello");
 	this.visible = false;
 	this.position = 'bottom';
 
 
-	if (index < 0 || index >= this.options.length)
-		index = 0;
+	if (index == undefined || index < 0 || index >= this.options.length)
+		this.selectedIndex = 0;
+	else
+		this.selectedIndex = index;
 
 	var target = this;
-	target.menu.html(this.options[index]);
+	this.menu.html(options[this.selectedIndex]);
 
 	this.menu.removeClass('select__menu--open');
-	if (index == undefined) {
-		this.selectedIndex = 0;
-	} else {
-		this.selectedIndex = index;
-	}
 
 	if (this.el.data('position') == 'top') 
 		this.position = 'top';
@@ -390,6 +358,7 @@ Select.prototype.open = function() {
 
 		target.el.find('.select__options > .select__options__item').click(function() {
 			target.selectedIndex = parseInt($(this).data('id'));
+			target.menu.html(target.options[target.selectedIndex]);
 			target.hide();
 		});
 
@@ -427,4 +396,5 @@ Select.prototype.hide = function() {
 Select.prototype.set = function(index) {
 	if (index >= 0 && index < this.options.length)
 		this.selectedIndex = index;
+		target.menu.html(target.options[target.selectedIndex]);
 }
