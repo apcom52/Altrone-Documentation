@@ -22,12 +22,14 @@
 			});
 
 			hljs.initHighlightingOnLoad();	        
-		    /*$("pre.css").snippet("css",{style:"emacs"});		    
-		    $("pre.js").snippet("javascript",{style:"emacs"});*/
 		});
 	</script>
 
-
+	<style>
+		.c-col {
+			background-color: #f1f2f4;
+		}
+	</style>
 </head>
 <body style="background-color: #f1f2f4;">
 <div class="taskbar taskbar--invert taskbar--fixed margin-top-0">
