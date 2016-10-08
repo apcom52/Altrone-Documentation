@@ -33,7 +33,7 @@
 	</div>
 
 	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
-		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Вкладки</div>
+		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Другие компоненты</div>
 		
 		<a name="images"></a>
 		<div class="card card--no-smooth">
