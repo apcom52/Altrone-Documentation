@@ -240,7 +240,7 @@
 		<div class="card card--no-smooth">
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Аккордеон</h1>
-				<span class="label">Доступно с версии 2.1</span>
+				<span class="label label--color-green">Доступно с версии 2.1</span>
 				<span class="label label--color-blue">JavaScript</span>
 				<div class="alert">
 					<div class="alert__content">Сворачивайте и разворачивайте блоки с помощью компонента Accordion</div>
