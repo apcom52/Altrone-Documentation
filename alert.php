@@ -12,10 +12,21 @@
 		var tab4 = new Tabs($('#tabs4'));
 		var tab5 = new Tabs($('#tabs5'));
 		var tab6 = new Tabs($('#tabs6'));
+		var tab7 = new Tabs($('#tabs7'));
 
 		var modal = new Modal($('#modalExample'));
 		$('#openModalExample').click(function() {
 			modal.show();
+		});
+
+		var dialog = new Dialog({
+			title: "Покупка билета",
+			message: "Вы действительно хотите купить билет на данный концерт?",
+			onOK: function() { alert('Билет куплен'); },
+			onCancel: function() { alert('Покупка отменена'); },
+		});
+		$('#openDialogExample').click(function() {
+			dialog.show();
 		});
 
 		$('#showNotification').click(function() {
@@ -25,7 +36,24 @@
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6 left-col" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#alert"><div class="list__item">Сообщения</div>
+					<a href="#label"><div class="list__item">Лейблы и бейджики</div></a>
+					<a href="#jumbotron"><div class="list__item">Заголовок страницы</div></a>
+					<a href="#modal"><div class="list__item">Модальные окна</div></a>
+					<a href="#dialog"><div class="list__item">Диалоговые окна</div></a>
+					<a href="#toast"><div class="list__item">Уведомления</div></a>
+					<a href="#tooltip"><div class="list__item">Всплывающие подсказки</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Сообщения</div>
 		
 		<a name="alert"></a>
@@ -222,9 +250,18 @@
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Модальные окна</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновлено с версии 2.1</span>
 				<span class="label label--color-blue">JavaScript</span>
 				<div class="alert">
 					<div class="alert__content">Модальные окна - диалоговые окна, в которых пользователь может вводить определенные данные. Также их можно использовать для отображения дополнительной информации.</div>
+				</div>
+
+				<div class="alert alert--color-red">
+					<div class="alert__content">Модальные окна в версии 2.1 имеют обновленное оформление. Модальные окна, созданные в версии 2.0 могут работать неправильно</div>
+				</div>
+
+				<div class="alert alert--color-red">
+					<div class="alert__content">В версии 2.1 были удалены элементы .modal__header__title, .modal__header__icon. Элемент .modal__header__close добавляется автоматически, если это необходимо</div>
 				</div>
 
 				<div class="alert alert--color-blue">
@@ -258,16 +295,8 @@
 					</div>
 					<div class="grid">
 						<div class="col-5 size-fix padding-1"><code>.modal__header</code></div>
-						<div class="col-7 size-fix padding-1">Блок заголовка модального окна</div>
-					</div>
-					<div class="grid">
-						<div class="col-5 size-fix padding-1"><code>.modal__header__title</code></div>
 						<div class="col-7 size-fix padding-1">Заголовок модального окна</div>
-					</div>
-					<div class="grid">
-						<div class="col-5 size-fix padding-1"><code>.modal__header__icon</code></div>
-						<div class="col-7 size-fix padding-1">Иконка в строке заголовка модального окна</div>
-					</div>
+					</div>					
 					<div class="grid">
 						<div class="col-5 size-fix padding-1"><code>.modal__content</code></div>
 						<div class="col-7 size-fix padding-1">Содержимое модального окна</div>
@@ -293,11 +322,15 @@
 					</div>
 					<div class="grid">
 						<div class="col-5 size-fix padding-1"><code>.modal--size-*</code></div>
-						<div class="col-7 size-fix padding-1">Изменяет ширину модального окна. Вместо * нужно подставить значение small, large или xl.</div>
+						<div class="col-7 size-fix padding-1">Изменяет ширину модального окна. Вместо * нужно подставить значение large, xl или full (на всю ширину страницы). На мобильных устройствах все модальные окна имеют по умолчанию значения .modal--size-full</div>
 					</div>
 					<div class="grid">
-						<div class="col-5 size-fix padding-1"><code>.modal__content--no-padding</code></div>
-						<div class="col-7 size-fix padding-1">Убирает внутренние отступы у содержимого модального окна (аналог глобального модификатора <code>.padding-0</code>)</div>
+						<div class="col-5 size-fix padding-1"><code>.modal__content--no-borders</code></div>
+						<div class="col-7 size-fix padding-1">Содержимое модального окна прилипает вплотную к границам (исчезают отступы от границ окна)</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.modal__content--no-borders</code></div>
+						<div class="col-7 size-fix padding-1">Содержимое модального окна прилипает вплотную к границам (исчезают отступы от границ окна)</div>
 					</div>
 				</div>
 
@@ -313,9 +346,9 @@ modal.show();
 						<div class="col-6 size-fix padding-1 bold">Описание</div>
 					</div>
 					<div class="grid">
-						<div class="col-3 size-fix padding-1"><code>Modal(element)</code></div>
+						<div class="col-3 size-fix padding-1"><code>Modal(element, options)</code></div>
 						<div class="col-3 size-fix padding-1">-</div>
-						<div class="col-6 size-fix padding-1">Конструктор. Принимает element, который является jQuery DOM объектом</div>
+						<div class="col-6 size-fix padding-1">Конструктор. Принимает element, который является jQuery DOM объектом. options - объект дополнительных параметров</div>
 					</div>
 					<div class="grid">
 						<div class="col-3 size-fix padding-1"><code>show()</code></div>
@@ -337,13 +370,36 @@ modal.show();
 						<div class="col-3 size-fix padding-1">bool</div>
 						<div class="col-6 size-fix padding-1">Содержит статус видимости модального окна. True, если окно открыто, false, если оно закрыто</div>
 					</div>
+
+					<h4>Параметры Modal</h4>
+					<p>Этот компонент содержит несколько параметров, которые регулируют работу компонента. Они передаются в аргумент options</p>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1 bold">Название</div>
+						<div class="col-3 size-fix padding-1 bold">Тип значения</div>
+						<div class="col-6 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>only_discarding</code></div>
+						<div class="col-3 size-fix padding-1">Boolean</div>
+						<div class="col-6 size-fix padding-1">Модальное окно будет закрываться только при нажатии на кнопку "Закрыть" (красный крестик в верхнем правом углу) или на любой элемент с классом <code>.modal__discard</code></div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>onShow</code></div>
+						<div class="col-3 size-fix padding-1">Function</div>
+						<div class="col-6 size-fix padding-1">Функция, которая будет выполняться при открытии модального окна</code></div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>onDiscard</code></div>
+						<div class="col-3 size-fix padding-1">Function</div>
+						<div class="col-6 size-fix padding-1">Функция, которая будет выполняться при закрытии модального окна</code></div>
+					</div>
 				</div>
 
 				<div id="tabs4Template">
 					<div class="grid">
 <pre><code class="html">&lt;div class=&quot;modal&quot; id=&quot;modalExample&quot;&gt;
 	&lt;div class=&quot;modal__header&quot;&gt;
-		&lt;div class=&quot;modal__header__title&quot;&gt;&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x43c;&#x43e;&#x434;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;&#x433;&#x43e; &#x43e;&#x43a;&#x43d;&#x430;&lt;/div&gt;
+		&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x43c;&#x43e;&#x434;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;&#x433;&#x43e; &#x43e;&#x43a;&#x43d;&#x430;
 	&lt;/div&gt;
 	&lt;div class=&quot;modal__content&quot;&gt;&#x417;&#x434;&#x435;&#x441;&#x44c; &#x441;&#x43e;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442;&#x441;&#x44f; &#x442;&#x435;&#x43a;&#x441;&#x442; &#x43c;&#x43e;&#x434;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;&#x433;&#x43e; &#x43e;&#x43a;&#x43d;&#x430;&lt;/div&gt;
 	&lt;div class=&quot;modal__footer&quot;&gt;
@@ -352,6 +408,87 @@ modal.show();
 &lt;/div&gt;</code></pre>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<a name="dialog"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">				
+				<h1 class="helvetica-thin">Диалоговые окна</h1>
+				<span class="label--color-green">Доступно с версии 2.1</span>
+				<span class="label label--color-blue">JavaScript</span>
+				<div class="alert">
+					<div class="alert__content">Диалоговые окна - вид модальных окон, который отображает текст и дает пользователю права выбора одного из двух вариантов.</div>
+				</div>
+
+				<div class="alert alert--color-red">
+					<div class="alert__content">Диалоговые окна доступны только начиная с версии 2.1. Если необходимо реализовать их на более старой версии, то необходимо воспользоваться обычными модальными окнами</div>
+				</div>				
+
+				<div class="tabs tabs--transparent tabs--color-teal" id="tabs7">
+					<div class="tabs__item tabs__item--active" data-tab-target="tabs7Example">Примеры</div>					
+					<div class="tabs__item" data-tab-target="tabs7JS">Javascript</div>
+				</div>			
+
+				<div id="tabs7Example">
+					<button class="button--color-blue" id="openDialogExample">Открыть диалоговое окно</button>
+				</div>
+
+				<div id="tabs7JS">
+
+<pre><code class="js">var dialog = new Dialog({
+	title: "Покупка билета",
+	message: "Вы действительно хотите купить билет на данный концерт?"
+	onOK: function() { alert('Билет куплен'); },
+	onCancel: function() { alert('Покупка отменена'); },
+});
+dialog.show();
+</code></pre>
+					<h4>Методы и свойства Dialog</h4>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1 bold">Название</div>
+						<div class="col-3 size-fix padding-1 bold">Тип возвращаемого значения</div>
+						<div class="col-6 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>Dialog( options)</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Конструктор. Принимает options - объект параметров</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>show()</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Вызывает диалоговое окно</div>
+					</div>
+
+					<h4>Параметры Dialog</h4>
+					<p>Этот компонент содержит несколько параметров, которые регулируют работу компонента. Они передаются в аргумент options</p>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1 bold">Название</div>
+						<div class="col-3 size-fix padding-1 bold">Тип возвращаемого значения</div>
+						<div class="col-6 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>title</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Заголовок диалогового окна</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>message</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Текст диалогового окна</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>onOK</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Функция, которая будет выполняться при нажатии на ОК. <i>Примечание: если вы не передали значение в этот параметр, то диалоговое окно будет содержать только одну кнопку - ОК, которая будет работать как кнопка "Отмена"</i></div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>onCancel</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Функция, которая будет выполняться при нажатии на ОТМЕНА.</div>
+					</div>
+				</div>				
 			</div>
 		</div>
 
@@ -447,23 +584,7 @@ modal.show();
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="col-3" style="position: fixed;">
-		<div class="card card--no-smooth">
-			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#alert"><div class="list__item">Сообщения</div>
-					<a href="#label"><div class="list__item">Лейблы и бейджики</div></a>
-					<a href="#jumbotron"><div class="list__item">Заголовок страницы</div></a>
-					<a href="#modal"><div class="list__item">Модальные окна</div></a>
-					<a href="#toast"><div class="list__item">Уведомления</div></a>
-					<a href="#tooltip"><div class="list__item">Всплывающие подсказки</div></a>
-				</div>				
-			</div>
-		</div>
-	</div>
+	</div>	
 </div>
 
 <div class="modal" id="modalExample">

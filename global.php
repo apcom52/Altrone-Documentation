@@ -16,7 +16,26 @@
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6">
+		<div class="card card--no-smooth left-col" style="position: fixed;">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#helvetica"><div class="list__item">Шрифты семейства Helvetica Neue</div>
+					<a href="#position"><div class="list__item">Расположение элементов</div></a>
+					<a href="#text"><div class="list__item">Оформление текста</div></a>
+					<a href="#margins"><div class="list__item">Внешние и внутренние отступы</div></a>
+					<a href="#colors"><div class="list__item">Цвета</div></a>
+					<a href="#animations"><div class="list__item">Анимации</div></a>
+					<a href="#shadows"><div class="list__item">Тень</div></a>
+					<a href="#visibility"><div class="list__item">Настройка видимости</div></a>
+					<a href="#pos"><div class="list__item">Позиционирование</div></a>
+					<a href="#fix"><div class="list__item">Фиксы</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div class="col-9 offset-3 offset-lm-0 col-lm-6">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Глобальные модификаторы</div>
 		<a name="helvetica"></a>
 		<div class="card card--no-smooth">
@@ -79,8 +98,12 @@
 			<div class="card__content">
 				<h1 class="helvetica-thin">Расположение элементов</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление в 2.0.2</span>
 				<div class="alert">
 					<div class="alert__content">Если вам необходимо расположить какой-нибудь элемент или группу элементов в нужном месте, то вам нужно воспользоваться группой следующих глобальных классов</div>
+				</div>
+				<div class="alert alert--color-yellow">
+					<div class="alert__content">В версии 2.0.2 модификаторы <b>.align-*</b> получили адаптивность значений. Аналогично сетке, вы можете устанавливать отдельные значения отступов для планшетов и смартфонов в планшетной ориентации и альбомной. Например, <b>.align-t-center</b></div>
 				</div>
 				<div class="alert alert--color-blue">
 					<div class="alert__content">Обратите внимание, что <b>.align-*</b> применяется на родительский блок, а <b>.pin-*</b> на сам блок, который нужно переместить</div>
@@ -201,11 +224,15 @@
 			<div class="card__content">
 				<h1 class="helvetica-thin">Внешние и внутренние отступы</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление в 2.0.2</span>
 				<div class="alert">
 					<div class="alert__content">Данный набор классов позволяет располагать элементы относительно друг друга на определенном расстоянии с помощью внешних или внутренних отступов</div>
 				</div>
 				<div class="alert alert--color-blue">
 					<div class="alert__content">Чтобы убрать отступы полностью используйте значение 0</div>
+				</div>
+				<div class="alert alert--color-yellow">
+					<div class="alert__content">В версии 2.0.2 внутренние и внешние отступы получили адаптивность значений. Аналогично сетке, вы можете устанавливать отдельные значения отступов для планшетов и смартфонов в планшетной ориентации и альбомной. Например, <b>.margin-lm-left-2</b></div>
 				</div>
 				<div class="alert alert--color-green">
 					<div class="alert__content">Данные классы можно комбинировать между собой</div>
@@ -307,6 +334,7 @@
 			<div class="card__content">
 				<h1 class="helvetica-thin">Цвета</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление в 2.0.1</span>
 				<div class="alert">
 					<div class="alert__content">Данный набор классов позволяет устанавливать цвет фона или текста для каждого элемента страницы</div>
 				</div>
@@ -352,6 +380,41 @@
 								<div class="m-gray-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">m-gray</div>
 								<div class="d-gray-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-gray</div>
 								<div class="black-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">black</div>
+								<h3 style="clear: left;">Оттенки цветов</h3>
+								<div class="label label--color-yellow" style="clear: both;">Доступно с версии 2.0.1</div><br>
+								<div class="u-red-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-red</div>
+								<div class="u-orange-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-orange</div>
+								<div class="u-yellow-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-yellow</div>
+								<div class="u-olive-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-olive</div>
+								<div class="u-green-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-green</div>
+								<div class="u-blue-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-blue</div>
+								<div class="u-teal-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-teal</div>
+								<div class="u-purple-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-purple</div>
+								<div class="u-violet-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-violet</div>
+								<div class="u-pink-bg padding-1 margin-1" style="float: left; border: 2px solid black;">u-pink</div>
+								<div class="u-brown-bg padding-1 margin-1" style="float: left; clear: right; border: 2px solid black;">u-brown</div>
+								<div class="l-red-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-red</div>
+								<div class="l-orange-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-orange</div>
+								<div class="l-yellow-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-yellow</div>
+								<div class="l-olive-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-olive</div>
+								<div class="l-green-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-green</div>
+								<div class="l-blue-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-blue</div>
+								<div class="l-teal-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-teal</div>
+								<div class="l-purple-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-purple</div>
+								<div class="l-violet-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-violet</div>
+								<div class="l-pink-bg padding-1 margin-1" style="float: left; border: 2px solid black;">l-pink</div>
+								<div class="l-brown-bg padding-1 margin-1" style="float: left; clear: right; border: 2px solid black;">l-brown</div>
+								<div class="d-red-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-red</div>
+								<div class="d-orange-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-orange</div>
+								<div class="d-yellow-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-yellow</div>
+								<div class="d-olive-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-olive</div>
+								<div class="d-green-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-green</div>
+								<div class="d-blue-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-blue</div>
+								<div class="d-teal-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-teal</div>
+								<div class="d-purple-bg white-fg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-purple</div>
+								<div class="d-violet-bg white-fg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-violet</div>
+								<div class="d-pink-bg white-fg padding-1 margin-1" style="float: left; border: 2px solid black;">d-pink</div>
+								<div class="d-brown-bg white-fg padding-1 margin-1" style="float: left; clear: right; border: 2px solid black;">d-brown</div>
 							</div>
 						</div>
 					</div>
@@ -370,13 +433,48 @@
 				</div>
 			</div>
 		</div>
-		
+
+		<a name="animations"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h1 class="helvetica-thin">Анимации</h1>
+				<span class="label label--color-green">Доступно с версии 2.1</span>
+				<div class="alert">
+					<div class="alert__content">Данный набор классов позволяет задавать анимацию отдельным элементам</div>
+				</div>
+				<div>
+					<div class="grid">
+						<div class="col-3 padding-1 bold">Наименование класса</div>
+						<div class="col-7 padding-1 bold">Описание класса</div>
+
+						<div class="col-3 padding-1"><code>.animation--*</code></div>
+						<div class="col-7 padding-1">Указывается название анимации. Доступные анимации: 
+							<ul>
+								<li><b>boom</b> - объект увеличивается в размере, а потом возвращается в исходное состояние</li>
+								<li><b>jump</b> - объект поднимается по оси Y, а после возвращается в исходное состояние</li>
+								<li><b>flip</b> - объект вращается вокруг оси Y</li>
+								<li><b>flipVertical</b> - объект вращается вокруг оси X</li>
+								<li><b>fadeIn</b> - объект появляется</li>
+								<li><b>fadeOut</b> - объект растворяется</li>
+							</ul>
+						</div>
+
+						<div class="col-3 padding-1"><code>.animation--time-*</code></div>
+						<div class="col-7 padding-1">Задает время анимации. Доступные варианты: <code>0-3s</code>, <code>0-5s</code>, <code>0-7s</code>, <code>1s</code>, <code>1-5s</code>, <code>2s</code>, <code>2-5s</code>, <code>3s</code></div>
+
+						<div class="col-3 padding-1"><code>.animation--function-*</code></div>
+						<div class="col-7 padding-1">Задает функцию сглаживания анимации. Доступные варианты: <code>linear</code>, <code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code>, <code>step-start</code>, <code>step-end</code>, </div>
+					</div>
+				</div>
+			</div>
+		</div>		
 
 		<a name="shadows"></a>
 		<div class="card card--no-smooth">
 			<div class="card__content">
 				<h1 class="helvetica-thin">Тень</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление 2.1</span>
 				<div class="alert">
 					<div class="alert__content">Данный набор классов позволяет устанавливать глубину тени у объектов</div>
 				</div>
@@ -395,8 +493,12 @@
 						<div class="col-7 padding-1 bold">Описание класса</div>
 						<div class="col-3 padding-1"><code>.shadow-*</code></div>
 						<div class="col-7 padding-1">Устанавливает глубину тени у объекта. Вместо * нужно подставить значение в промежутке от 1 до 5</div>
+
 						<div class="col-3 padding-1"><code>.card_shadow</code></div>
 						<div class="col-7 padding-1">Специальный вариант тени, который больше подходит для "карточек"</div>
+
+						<div class="col-3 padding-1"><code>.text-shadow</code></div>
+						<div class="col-7 padding-1">Текст получает небольшую тень (тень является едва заметной и нужна лишь для повышения читабельности текста на ярком фоне (например текст кнопок))</div>
 					</div>
 				</div>
 
@@ -421,6 +523,7 @@
 						<div class="shadow-4 olive-bg black-fg margin-1 padding-1 pin-left">Shadow 4</div>
 						<div class="shadow-5 olive-bg black-fg margin-1 padding-1 pin-left">Shadow 5</div>
 						<div class="card_shadow olive-bg black-fg margin-1 padding-1 pin-left">Card Shadow</div>
+						<div class="text-shadow olive-bg black-fg margin-1 padding-1 pin-left">Text Shadow</div>
 					</div>		
 				</div>
 			</div>
@@ -472,21 +575,53 @@
 			</div>
 		</div>
 
-	</div>
-	<div class="col-3">
-		<div class="card card--no-smooth" style="position: fixed;">
+		<a name="pos"></a>
+		<div class="card card--no-smooth">
 			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#helvetica"><div class="list__item">Шрифты семейства Helvetica Neue</div>
-					<a href="#position"><div class="list__item">Расположение элементов</div></a>
-					<a href="#text"><div class="list__item">Оформление текста</div></a>
-					<a href="#margins"><div class="list__item">Внешние и внутренние отступы</div></a>
-					<a href="#colors"><div class="list__item">Цвета</div></a>
-					<a href="#shadows"><div class="list__item">Тень</div></a>
-					<a href="#visibility"><div class="list__item">Настройка видимости</div></a>
-				</div>				
+				<h1 class="helvetica-thin">Позиционирование</h1>
+				<span class="label">Доступно с версии 2.0</span>
+				<div class="alert">
+					<div class="alert__content">Данный набор модификаторов позволяет задать позиционирование блока относительно других блоков</div>
+				</div>
+				<div>
+					<div class="grid">
+						<div class="col-3 padding-1 bold">Наименование класса</div>
+						<div class="col-7 padding-1 bold">Описание класса</div>
+
+						<div class="col-3 padding-1"><code>.fixed</code></div>
+						<div class="col-7 padding-1">Фиксированное положение (блок не прокручивается при скроллинге)</div>
+
+						<div class="col-3 padding-1"><code>.absolute</code></div>
+						<div class="col-7 padding-1">Абсолютное положение (блок располагается поверх других блоков)</div>
+
+						<div class="col-3 padding-1"><code>.fixed</code></div>
+						<div class="col-7 padding-1">Положение относительно родительского блока</div>	
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
+		</div>	
+
+		<a name="fix"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h1 class="helvetica-thin">Фиксы</h1>
+				<span class="label label--color-green">Доступно с версии 2.0.1</span>
+				<div class="alert">
+					<div class="alert__content">Данный набор модификаторов позволяет исправлять возможные ошибки верстки, при использовании некоторых других модификаторов</div>
+				</div>
+				<div>
+					<div class="grid">
+						<div class="col-3 padding-1 bold">Наименование класса</div>
+						<div class="col-7 padding-1 bold">Описание класса</div>
+
+						<div class="col-3 padding-1"><code>.size-fix</code></div>
+						<div class="col-7 padding-1">Внутренние отступы и размеры границ становятся частью размера самого блока (используется <code>box-sizing: border-box</code>)</div>
+
+						<div class="col-3 padding-1"><code>.float-fix, .float-left-fix, .float-right-fix</code></div>
+						<div class="col-7 padding-1">Убирает обтекаемость блока со всех сторон, с левой стороны или с правой стороны</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>	
 </div>

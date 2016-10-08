@@ -22,7 +22,25 @@
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6 left-col" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#buttons"><div class="list__item">Стандартные кнопки</div>
+					<a href="#colors"><div class="list__item">Цвета кнопок</div></a>
+					<a href="#smooth"><div class="list__item">Закругление кнопок</div></a>
+					<a href="#size"><div class="list__item">Размеры кнопок</div></a>
+					<a href="#icon"><div class="list__item">Кнопки с иконкой</div></a>
+					<a href="#transparent"><div class="list__item">Прозрачность кнопок</div></a>
+					<a href="#group"><div class="list__item">Группа кнопок</div></a>
+					<a href="#switch"><div class="list__item">Переключатели</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Кнопки</div>
 		
 		<a name="buttons"></a>
@@ -449,21 +467,5 @@ $('#toggleButton').click(function() {
 		</div>
 	</div>
 
-	<div class="col-3" style="position: fixed;">
-		<div class="card card--no-smooth">
-			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#buttons"><div class="list__item">Стандартные кнопки</div>
-					<a href="#colors"><div class="list__item">Цвета кнопок</div></a>
-					<a href="#smooth"><div class="list__item">Закругление кнопок</div></a>
-					<a href="#size"><div class="list__item">Размеры кнопок</div></a>
-					<a href="#icon"><div class="list__item">Кнопки с иконкой</div></a>
-					<a href="#transparent"><div class="list__item">Прозрачность кнопок</div></a>
-					<a href="#group"><div class="list__item">Группа кнопок</div></a>
-					<a href="#switch"><div class="list__item">Переключатели</div></a>
-				</div>				
-			</div>
-		</div>
-	</div>
+	
 </div>

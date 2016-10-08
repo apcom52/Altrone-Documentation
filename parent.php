@@ -29,20 +29,34 @@
 		.c-col {
 			background-color: #f1f2f4;
 		}
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+
+		@media (max-width: 640px) {
+			.left-col {
+				position: relative !important;
+			}
+		}
 	</style>
+
+	<script>
+		$(function() {
+			var accordion = new Accordion($('#accordionExample'), {});
+			var tabs = new Tabs($('#tabsExample'));
+		});
+	</script>
 </head>
-<body style="background-color: #f1f2f4;">
+<body>
 <div class="taskbar taskbar--invert taskbar--fixed margin-top-0">
-	<div class="taskbar__item taskbar__item--hover-color-teal" id="showSidebar"><i class="fa fa-bars"></i></div>
+	<div class="taskbar__item taskbar__item--hover-color-yellow" id="showSidebar"><i class="fa fa-bars"></i></div>
 	<div class="taskbar__item taskbar__item--logo taskbar__item--no-select">Altrone CSS :: <? echo $title; ?></div>
 </div>
 
-<div class="sidebar sidebar--under-taskbar sidebar--invert sidebar--color-teal" id="sidebar">
-	<a href="index.php"><div class="sidebar__cover">
-		<img src="http://vignette2.wikia.nocookie.net/marveldatabase/images/0/05/Ultron-icon.png/revision/latest?cb=20150423093134" alt="Altrone" width="64" height="auto">
-		<div class="sidebar__cover__title">Altrone CSS</div>
-		<button class="button--size-small button--color-green button--icon"><i class="fa fa-download"></i>Загрузить</button>
-	</div>	</a>
+<div class="sidebar sidebar--under-taskbar sidebar--invert sidebar--color-yellow" id="sidebar">
+	<a href="index.php"><div class="sidebar__cover align-center">
+		<h1 class="helvetica-thin sidebar__cover__title">Altrone CSS</h3>
+	</div></a>
 	<div class="sidebar__menu">
 		<a href="global.php"><div class="sidebar__menu__item <? if ($title=="Глобальные модификаторы")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-globe"></i>Глобальные модификаторы</div></a>
 		<a href="grid.php"><div class="sidebar__menu__item <? if ($title=="Сетка")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-th"></i>Сетка</div></a>
@@ -53,6 +67,7 @@
 		<a href="tabs.php"><div class="sidebar__menu__item <? if ($title=="Вкладки")  { echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-ellipsis-h"></i>Вкладки</div></a>
 		<a href="cards.php"><div class="sidebar__menu__item <? if ($title=="Карточки") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-credit-card"></i>Карточки</div></a>
 		<a href="bars.php"><div class="sidebar__menu__item <? if ($title=="Бары") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-tasks"></i>Бары</div></a>
+		<a href="more.php"><div class="sidebar__menu__item <? if ($title=="Прочее") {  echo "sidebar__menu__item--active"; } ?>"><i class="fa fa-cogs"></i>Другие компоненты</div></a>
 	</div>
 </div>
 

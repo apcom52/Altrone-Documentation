@@ -12,7 +12,19 @@
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6 left-col" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#card"><div class="list__item">Стандартные Карточки</div>
+					<a href="#images"><div class="list__item">Карточки с изображениями</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Карточки</div>
 		
 		<a name="card"></a>
@@ -214,17 +226,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="col-3" style="position: fixed;">
-		<div class="card card--no-smooth">
-			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#card"><div class="list__item">Стандартные Карточки</div>
-					<a href="#images"><div class="list__item">Карточки с изображениями</div></a>
-				</div>				
-			</div>
-		</div>
-	</div>
+	</div>	
 </div>

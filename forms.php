@@ -18,7 +18,24 @@
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6 left-col" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#forms"><div class="list__item">Формы</div>
+					<a href="#fields"><div class="list__item">Комбинированные поля</div></a>
+					<a href="#checkbox"><div class="list__item">Флажки</div></a>
+					<a href="#radio"><div class="list__item">Радио-кнопки</div></a>
+					<a href="#toggle"><div class="list__item">Переключатели</div></a>
+					<a href="#dropdown"><div class="list__item">Выпадающее меню</div></a>
+					<a href="#select"><div class="list__item">Выпадающий список</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Формы</div>
 		
 		<a name="forms"></a>
@@ -712,22 +729,5 @@
 			</div>
 		</div>
 
-	</div>
-
-	<div class="col-3" style="position: fixed;">
-		<div class="card card--no-smooth">
-			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#forms"><div class="list__item">Формы</div>
-					<a href="#fields"><div class="list__item">Комбинированные поля</div></a>
-					<a href="#checkbox"><div class="list__item">Флажки</div></a>
-					<a href="#radio"><div class="list__item">Радио-кнопки</div></a>
-					<a href="#toggle"><div class="list__item">Переключатели</div></a>
-					<a href="#dropdown"><div class="list__item">Выпадающее меню</div></a>
-					<a href="#select"><div class="list__item">Выпадающий список</div></a>
-				</div>				
-			</div>
-		</div>
-	</div>
+	</div>	
 </div>

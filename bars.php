@@ -12,7 +12,20 @@
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6 left-col" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#taskbar"><div class="list__item">Навигационная панель</div>
+					<a href="#sidebar"><div class="list__item">Боковая панель</div></a>
+					<a href="#progress"><div class="list__item">Прогрессбар</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Бары</div>
 		
 		<a name="taskbar"></a>
@@ -20,11 +33,15 @@
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Навигационная панель</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление 2.1</span>
 				<div class="alert">
 					<div class="alert__content">Верхняя навигационная панель (taskbar)</div>
 				</div>
 				<div class="alert alert--color-green">
 					<div class="alert__content">Модификаторы верхней навигационной панели можно использовать совместно друг с другом</div>
+				</div>
+				<div class="alert alert--color-yellow">
+					<div class="alert__content">В обновлении 2.1 было добавлен новый модификатор <b>.taskbar--transparent</b></div>
 				</div>
 				<div class="tabs tabs--transparent tabs--color-teal" id="tabs1">
 					<div class="tabs__item tabs__item--active" data-tab-target="tabs1Example">Примеры</div>
@@ -67,6 +84,10 @@
 					<div class="grid">
 						<div class="col-5 size-fix padding-1"><code>.taskbar--fixed</code></div>
 						<div class="col-7 size-fix padding-1">Фиксированное положение на странице</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.taskbar--transparent</code></div>
+						<div class="col-7 size-fix padding-1">Прозрачный фон <b>(2.1)</b></div>
 					</div>
 					<div class="grid">
 						<div class="col-5 size-fix padding-1"><code>.taskbar__item--logo</code></div>
@@ -118,6 +139,7 @@
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Боковая панель</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление 2.1</span>
 				<span class="label label--color-blue">JavaScript</span>
 				<div class="alert">
 					<div class="alert__content">Боковая навигационная панель (sidebar)</div>
@@ -127,9 +149,13 @@
 					<div class="alert__content">Модификаторы боковой навигационной панели можно использовать совместно друг с другом</div>
 				</div>
 
-				<alert class="alert--color-blue">
+				<div class="alert alert--color-blue">
 					<div class="alert__content">По умолчанию боковое меню располагается на всю высоту страницы, перекрывая и верхнее навигационное меню. Чтобы она располагалась под верхним навигационном меню, используйте модификатор .sidebar--under-taskbar</div>
-				</alert>
+				</div>
+
+				<div class="alert alert--color-green">
+					<div class="alert__content">В версии 2.1 компонент получил поддержку callback-функций</div>
+				</div>
 				
 				<div class="tabs tabs--transparent tabs--color-teal" id="tabs2">
 					<div class="tabs__item tabs__item--active" data-tab-target="tabs2Example">Примеры</div>
@@ -190,9 +216,9 @@ sidebar.show();
 						<div class="col-6 size-fix padding-1 bold">Описание</div>
 					</div>
 					<div class="grid">
-						<div class="col-3 size-fix padding-1"><code>Sidebar(element)</code></div>
+						<div class="col-3 size-fix padding-1"><code>Sidebar(element, options)</code></div>
 						<div class="col-3 size-fix padding-1">-</div>
-						<div class="col-6 size-fix padding-1">Конструктор. Принимает element, который является jQuery DOM объектом</div>
+						<div class="col-6 size-fix padding-1">Конструктор. Принимает element, который является jQuery DOM объектом и объект дополнительных аргументов options</div>
 					</div>
 					<div class="grid">
 						<div class="col-3 size-fix padding-1"><code>show()</code></div>
@@ -213,6 +239,29 @@ sidebar.show();
 						<div class="col-3 size-fix padding-1"><code>visible</code></div>
 						<div class="col-3 size-fix padding-1">bool</div>
 						<div class="col-6 size-fix padding-1">Содержит статус показа бокового меню. True, если меню открыто, false, если оно скрыто</div>
+					</div>
+
+					<h4>Параметры Sidebar</h4>
+					<p>Этот компонент содержит несколько параметров, которые регулируют работу компонента. Они передаются в аргумент options</p>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1 bold">Название</div>
+						<div class="col-3 size-fix padding-1 bold">Тип значения</div>
+						<div class="col-6 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>enable_scroll</code></div>
+						<div class="col-3 size-fix padding-1">Boolean</div>
+						<div class="col-6 size-fix padding-1">Логическое значение, которое показывает будет ли боковое меню "прилипать" к верхней стороне страницы при прокрутке (рекомендуется использовать вместе с модификатором <code>.sidebar--under-taskbar</code>)</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>onShow</code></div>
+						<div class="col-3 size-fix padding-1">Function</div>
+						<div class="col-6 size-fix padding-1">Функция, которая будет запускаться при появлении бокового меню</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>onHide</code></div>
+						<div class="col-3 size-fix padding-1">Function</div>
+						<div class="col-6 size-fix padding-1">Функция, которая будет запускаться при скрытии бокового меню</div>
 					</div>
 				</div>
 
@@ -279,22 +328,29 @@ sidebar.show();
 			<div class="card__content">				
 				<h1 class="helvetica-thin">Прогресс-бар</h1>
 				<span class="label">Доступно с версии 2.0</span>
+				<span class="label label--color-green">Обновление 2.1</span>
+				<span class="label label--color-blue">JavaScript</span>
 				<div class="alert">
 					<div class="alert__content">Индикатор прогресса загрузки</div>
 				</div>
 
-				<alert class="alert--color-blue">
+				<div class="alert alert--color-blue">
 					<div class="alert__content">Для того, чтобы установить процент загрузки, используйте встроенные стили и свойство width</div>
-				</alert>
+				</div>
 
 				<div class="alert alert--color-green">
 					<div class="alert__content">Модификаторы прогресс-бара можно использовать совместно друг с другом. Если используется модификатор .progress--size-thin, то использовать элемент .progress__active__text и модификатор .progress--with-text нельзя.</div>
+				</div>
+
+				<div class="alert alert--color-yellow">
+					<div class="alert__content">В обновлении 2.1 данный компонент получил javascript-обертку, с помощью которой можно удобно управлять состоянием прогресс-бара</div>
 				</div>
 				
 				<div class="tabs tabs--transparent tabs--color-teal" id="tabs3">
 					<div class="tabs__item tabs__item--active" data-tab-target="tabs3Example">Примеры</div>
 					<div class="tabs__item" data-tab-target="tabs3Elements">Элементы</div>
 					<div class="tabs__item" data-tab-target="tabs3Mods">Модификаторы</div>
+					<div class="tabs__item" data-tab-target="tabs3JS">JavaScript</div>
 					<div class="tabs__item" data-tab-target="tabs3Template">Шаблон</div>
 				</div>			
 
@@ -302,6 +358,61 @@ sidebar.show();
 					<div class="progress progress--color-violet progress--with-text">
 						<div class="progress__active" style="width: 26%"><div class="progress__active__text">26%</div></div>
 					</div>
+				</div>
+
+				<div id="tabs3JS">
+
+<pre><code class="js">var progress = new Progress($('#progressExample'), {current: 1, max: 5});
+</code></pre>
+					<h4>Методы и свойства Progress</h4>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1 bold">Название</div>
+						<div class="col-3 size-fix padding-1 bold">Тип возвращаемого значения</div>
+						<div class="col-6 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>Progress(element, options)</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Конструктор. Принимает element, который является jQuery DOM объектом и объект дополнительных аргументов options</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>set(value)</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Устанавливает текущее значение</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>setMaximum(max)</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Устанавливает максимальное значение</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>toggle()</code></div>
+						<div class="col-3 size-fix padding-1">-</div>
+						<div class="col-6 size-fix padding-1">Меняет значение видимости бокового меню на противоположное</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>percent</code></div>
+						<div class="col-3 size-fix padding-1">float</div>
+						<div class="col-6 size-fix padding-1">Содержит значение прогресса в процентах (от 0 до 100)</div>
+					</div>
+
+					<h4>Параметры Progress</h4>
+					<p>Этот компонент содержит несколько параметров, которые регулируют работу компонента. Они передаются в аргумент options</p>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1 bold">Название</div>
+						<div class="col-3 size-fix padding-1 bold">Тип значения</div>
+						<div class="col-6 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>max</code></div>
+						<div class="col-3 size-fix padding-1">Integer</div>
+						<div class="col-6 size-fix padding-1">Максимальное значение</div>
+					</div>
+					<div class="grid">
+						<div class="col-3 size-fix padding-1"><code>current</code></div>
+						<div class="col-3 size-fix padding-1">Integer</div>
+						<div class="col-6 size-fix padding-1">Текущее значение</div>
+					</div>					
 				</div>
 
 				<div id="tabs3Elements">
@@ -359,18 +470,5 @@ sidebar.show();
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="col-3" style="position: fixed;">
-		<div class="card card--no-smooth">
-			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#taskbar"><div class="list__item">Навигационная панель</div>
-					<a href="#sidebar"><div class="list__item">Боковая панель</div></a>
-					<a href="#progress"><div class="list__item">Прогрессбар</div></a>
-				</div>				
-			</div>
-		</div>
-	</div>
+	</div>	
 </div>

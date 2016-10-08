@@ -12,11 +12,31 @@
 		var tab4 = new Tabs($('#tabs4'));
 		var tab5 = new Tabs($('#tabs5'));
 		var tab6 = new Tabs($('#tabs6'));
+		var tab7 = new Tabs($('#tabs7'));
+		var tab8 = new Tabs($('#tabs8'));
 	});
 </script>
 
 <div class="grid">
-	<div class="col-9">
+	<div class="col-3 col-lm-6 left-col" style="position: fixed;">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Разделы</h3>
+				<div class="list list--color-teal">
+					<a href="#list"><div class="list__item">Стандартный список</div>
+					<a href="#animation"><div class="list__item">Анимации списков</div></a>
+					<a href="#icons"><div class="list__item">Список с иконками</div></a>
+					<a href="#stacked_list"><div class="list__item">Stacked list</div></a>
+					<a href="#breadcrumbs"><div class="list__item">"Хлебные крошки"</div></a>
+					<a href="#navigation"><div class="list__item">Навигационный список</div></a>
+					<a href="#feed"><div class="list__item">Лента</div></a>
+					<a href="#userlist"><div class="list__item">Список пользователей</div></a>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="col-9 col-lm-6 offset-3 offset-lm-0">
 		<div class="helvetica-thin margin-left-1" style="font-size: 48px;">Списки</div>
 		
 		<a name="list"></a>
@@ -119,10 +139,6 @@
 					<div class="alert__content">Анимации Slide и Border могут изменять свое поведение от модификатора .list--horizontal</div>
 				</div>
 
-				<div class="alert alert--color-red">
-					<div class="alert__content">Модификаторы из этого раздела нельзя использовать совместно</div>
-				</div>
-				
 				<div class="tabs tabs--transparent tabs--color-teal" id="tabs2">
 					<div class="tabs__item tabs__item--active" data-tab-target="tabs2Example">Примеры</div>
 					<div class="tabs__item" data-tab-target="tabs2Mods">Модификаторы</div>
@@ -349,6 +365,126 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a name="stacked_list"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">				
+				<h1 class="helvetica-thin">Stacked List</h1>
+				<span class="label label--color-green">Доступно с версии 2.1</span>
+				<div class="alert">
+					<div class="alert__content">Stacked List - это разновидность списка, элементы которого разделены границами со всех сторон</div>
+				</div>				
+				<div class="tabs tabs--transparent tabs--color-teal" id="tabs7">
+					<div class="tabs__item tabs__item--active" data-tab-target="tabs7Example">Примеры</div>
+					<div class="tabs__item" data-tab-target="tabs7Elements">Элементы</div>
+					<div class="tabs__item" data-tab-target="tabs7Mods">Модификаторы</div>
+					<div class="tabs__item" data-tab-target="tabs7Template">Шаблон</div>
+				</div>			
+
+				<div id="tabs7Example">
+					<div class="grid">
+						<div class="stacked-list margin-horizontal-2 size-fix">
+							<div class="stacked-list__item">Math</div>
+							<div class="stacked-list__item">Physical Education</div>
+							<div class="stacked-list__item">Computer Science</div>
+							<div class="stacked-list__item">Biology</div>
+						</div>					
+					</div>					
+				</div>
+
+				<div id="tabs7Elements">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название элемента</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.stacked-list__item</code></div>
+						<div class="col-7 size-fix padding-1">Элемент списка</div>
+					</div>
+				</div>
+
+				<div id="tabs7Mods">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название модификатора</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.stacked-list--invert</code></div>
+						<div class="col-7 size-fix padding-1">Темная тема для списка</div>
+					</div>
+				</div>
+
+				<div id="tabs7Template">
+					<div class="grid">
+<pre><code class="html">&lt;div class=&quot;stacked-list&quot;&gt;
+	&lt;div class=&quot;stacked-list__item&quot;&gt;Math&lt;/div&gt;
+	&lt;div class=&quot;stacked-list__item&quot;&gt;Physical Education&lt;/div&gt;
+	&lt;div class=&quot;stacked-list__item&quot;&gt;Computer Science&lt;/div&gt;
+	&lt;div class=&quot;stacked-list__item&quot;&gt;Biology&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a name="breadcrumbs"></a>
+		<div class="card card--no-smooth">
+			<div class="card__content">				
+				<h1 class="helvetica-thin">"Хлебные крошки"</h1>
+				<span class="label label--color-green">Доступно с версии 2.1</span>
+				<div class="alert">
+					<div class="alert__content">"Хлебные крошки" используются в случае, когда осуществляется навигация по иерархичной структуре</div>
+				</div>				
+				<div class="tabs tabs--transparent tabs--color-teal" id="tabs8">
+					<div class="tabs__item tabs__item--active" data-tab-target="tabs8Example">Примеры</div>
+					<div class="tabs__item" data-tab-target="tabs8Elements">Элементы</div>
+					<div class="tabs__item" data-tab-target="tabs8Mods">Модификаторы</div>
+					<div class="tabs__item" data-tab-target="tabs8Template">Шаблон</div>
+				</div>			
+
+				<div id="tabs8Example">
+					<div class="grid">
+						<div class="breadcrumbs">
+							<div class="breadcrumbs__item">Главная</div>
+							<div class="breadcrumbs__item">Документы</div>
+							<div class="breadcrumbs__item">Лицензионное соглашение</div>
+						</div>			
+					</div>					
+				</div>
+
+				<div id="tabs8Elements">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название элемента</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.breadcrumbs__item</code></div>
+						<div class="col-7 size-fix padding-1">Элемент списка</div>
+					</div>
+				</div>
+
+				<div id="tabs8Mods">
+					<div class="grid">
+						<div class="col-5 size-fix padding-1 bold">Название модификатора</div>
+						<div class="col-7 size-fix padding-1 bold">Описание</div>
+					</div>
+					<div class="grid">
+						<div class="col-5 size-fix padding-1"><code>.breadcrumbs--invert</code></div>
+						<div class="col-7 size-fix padding-1">Темная тема для списка</div>
+					</div>
+				</div>
+
+				<div id="tabs8Template">
+					<div class="grid">
+<pre><code class="html">&lt;div class=&quot;breadcrumbs&quot;&gt;
+	&lt;div class=&quot;breadcrumbs__item&quot;&gt;&#x413;&#x43b;&#x430;&#x432;&#x43d;&#x430;&#x44f;&lt;/div&gt;
+	&lt;div class=&quot;breadcrumbs__item&quot;&gt;&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;&lt;/div&gt;
+	&lt;div class=&quot;breadcrumbs__item&quot;&gt;&#x41b;&#x438;&#x446;&#x435;&#x43d;&#x437;&#x438;&#x43e;&#x43d;&#x43d;&#x43e;&#x435; &#x441;&#x43e;&#x433;&#x43b;&#x430;&#x448;&#x435;&#x43d;&#x438;&#x435;&lt;/div&gt;
+&lt;/div&gt;	</code></pre>
 					</div>
 				</div>
 			</div>
@@ -685,21 +821,5 @@
 			</div>
 		</div>
 
-	</div>
-
-	<div class="col-3" style="position: fixed;">
-		<div class="card card--no-smooth">
-			<div class="card__content">
-				<h3>Разделы</h3>
-				<div class="list list--color-teal">
-					<a href="#list"><div class="list__item">Стандартный список</div>
-					<a href="#animation"><div class="list__item">Анимации списков</div></a>
-					<a href="#icons"><div class="list__item">Список с иконками</div></a>
-					<a href="#navigation"><div class="list__item">Навигационный список</div></a>
-					<a href="#feed"><div class="list__item">Лента</div></a>
-					<a href="#userlist"><div class="list__item">Список пользователей</div></a>
-				</div>				
-			</div>
-		</div>
-	</div>
+	</div>	
 </div>
