@@ -121,17 +121,15 @@ $(function() {
 });
 
 /* Боковое меню */
-function Sidebar(element, enable_scroll, options) {
+function Sidebar(element, options) {
 	// Sidebar.prototype.el = undefined;
 	if (!options) options = {};
 	if (Sidebar.prototype.collection == undefined)
 		Sidebar.prototype.collection = []
-	this.enable_scroll = false;
-	if (enable_scroll != undefined)
-		this.enable_scroll = enable_scroll;
 	this.el = element;	
 	Sidebar.prototype.collection.push(this);
 	this.onShow = options.onShow || null;
+	this.enable_scroll = options.enable_scroll || null;
 	this.onHide = options.onHide || null;
 }
 
@@ -154,17 +152,37 @@ Sidebar.prototype.show = function() {
 	if (element.hasClass('sidebar--under-taskbar')) {
 		$('.overflow').addClass('overflow--under-taskbar');
 	}
+
+	var topScrollPosition = $(window).scrollTop();
+	console.log(topScrollPosition);
+	console.log(target.enable_scroll);
+	if (target.enable_scroll) {
+		if (topScrollPosition >= 44) {
+			console.log('more than 44');
+			element.css('top', '0').css('height', '100%');
+			$('.overflow').css('top', 0).css('height', '100%');
+		} else {
+			console.log('else');
+			element.css('top', (44 - topScrollPosition) + 'px');
+			$('.overflow').css('top', 44 - topScrollPosition).css('height', 'calc(100% - ' + (44 - topScrollPosition).toString());
+		}
+	}		
 	
 	// Sidebar.prototype.visible = true;
 	this.visible = true;
 	element.trigger("sidebar-show");
 }
 
-Sidebar.prototype.hide = function() {
+Sidebar.prototype.hide = function(from_overflow) {
 	var target = this;
 	var element = this.el;
 	element.removeClass('sidebar--show');
 	this.visible = false;
+
+	if (!from_overflow) {
+		target.overflow.destroy();
+	}
+
 	if (this.onHide) this.onHide();
 }
 
@@ -637,6 +655,7 @@ Dialog.prototype.show = function() {
 }
 
 Accordion = function(element, options) {
+	if (!options) options = {};
 	var target = this;
 	target.el = element;
 	target.multi = options.multi || false;
@@ -670,7 +689,16 @@ Accordion.prototype.closeOthers = function() {
 
 Overflow = function(options) {
 	if (options == undefined) options = {};
+	if (!Overflow.prototype.collection) {
+		Overflow.prototype.collection = [];
+	} else {
+		for (var i = 0; i < Overflow.prototype.collection.length; i++) {
+			(Overflow.prototype.collection[i]).destroy();
+		}
+	}
+
 	var target = this;
+	Overflow.prototype.collection.push(target);
 	$('body').append('<div class="overflow"></div>');
 	target.el = $('body .overflow');
 	target.onDestroy = options.onDestroy || null;

@@ -60,13 +60,14 @@
 					<div class="col-8 col-lm-6">
 						<div class="alert alert--color-green">
 							<div class="alert__header">Последняя стабильная версия</div>
-							<div class="alert__content">Последняя стабильная версия Altrone-CSS: <b>2.1.2</b></div>
-							<a href="https://github.com/apcom52/Altrone2-CSS/releases/tag/2.1.2"><button>Что нового?</button></a>
+							<div class="alert__content">Последняя стабильная версия Altrone-CSS: <b>2.1.3</b></div>
+							<a href="https://github.com/apcom52/Altrone2-CSS/releases/tag/2.1.3"><button>Что нового?</button></a>
 						</div>
 						<div class="alert alert--color-yellow">
 							<div class="alert__header">Актуальные версии</div>
 							<div class="alert__content">
 								<ul>
+									<li><b>2.1.2</b> Blinked Basilisk</li>
 									<li><b>2.1.1</b> Blinked Basilisk</li>
 									<li><b>2.1</b> Blinked Basilisk</li>
 									<li><b>2.0.2</b> Angry Acromantula</li>
@@ -76,7 +77,7 @@
 						</div>
 					</div>
 					<div class="col-4 col-lm-6">
-						<a href="https://github.com/apcom52/Altrone2-CSS/releases/download/2.1.2/2.1.2.zip"><button class="button--color-green button--size-large button--fit button--icon"><i class="fa fa-download"></i>Загрузить 2.1.2</button></a>
+						<a href="https://github.com/apcom52/Altrone2-CSS/releases/download/2.1.3/2.1.3.zip"><button class="button--color-green button--size-large button--fit button--icon"><i class="fa fa-download"></i>Загрузить 2.1.3</button></a>
 						<div class="col-6"><a href="https://github.com/apcom52/Altrone2-CSS"><button class="button--icon button--fit"><i class="fa fa-github"></i>Исходный код</button></a></div>
 						<div class="col-6"><a href="https://github.com/apcom52/Altrone2-CSS/raw/altrone2.1-dev/dist/2.0.2.zip"><button class="button--icon button--fit"><i class="fa fa-download"></i>Загрузить (2.0.2)</button></a></div>
 						<div class="col-12">
